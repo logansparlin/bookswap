@@ -1,0 +1,21 @@
+<template name="books">
+	<div class="container content-wrapper">
+	{{#each books}}
+		<div class="book-container">
+			<div class="book-image"></div>
+			<h1>{{title}}</h1>
+			<span>{{author}}</span>
+			<div class="cost">
+				<span class="price-new">
+					{{newPrice}}
+				</span>
+				<span class="current-price">
+					{{price}}
+				</span>
+			</div>
+		</div>
+	{{else}}
+		<h1>No Books Here</h1>
+	{{/each}}
+	</div>
+</template>
