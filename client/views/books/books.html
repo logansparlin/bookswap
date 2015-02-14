@@ -1,0 +1,17 @@
+<template name="books">
+	{{#if books}}
+	<!-- 	<h1>Search Info</h1> -->
+		{{#each books}}
+
+			<div class="book-container">
+				<div class="book">
+				<img class="book-image" src="{{volumeInfo.imageLinks.smallThumbnail}}"/>
+					<div class="book-title">
+						{{volumeInfo.title}}
+					</div>
+				</div>
+			</div>
+
+		{{/each}}
+	{{/if}}
+</template>

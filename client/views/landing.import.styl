@@ -1,0 +1,115 @@
+.content-wrapper 
+	width 100%
+	height 100%
+	position relative
+	z-index 2
+	background white
+
+.landing 
+	position relative
+	z-index 2
+	width 100%
+	height 100%
+	background linear-gradient(top, dark-blue, lighten(light-blue, 10%))
+	// background url('../images/background.jpg') no-repeat center center
+	background-size cover
+	transition none
+	.landing-container
+		position absolute
+		top 50%
+		left 50%
+		transform translate(-50%, -50%)
+		text-align center
+	h1 
+		color white
+		text-transform uppercase
+		font-weight 300
+		letter-spacing 0.5em
+		padding-left 20px
+		// border-left 5px solid darken(dark-blue, 10%)
+		// border-right 5px solid darken(dark-blue, 10%)
+		font-size 2.5em
+	.tag 
+		color white
+		letter-spacing 0.18em
+		text-transform uppercase
+		font-size 0.8em
+		padding-top 10px
+		.used 
+			position relative
+			bottom 5px
+			padding-bottom 3px
+			border-bottom 1px solid white
+	.home-search 
+		width 85%
+		padding 15px 10px
+		margin 0 auto
+		margin-top 20px
+		outline none
+		border none
+		font-size 0.8em
+		color dark-blue
+		text-transform uppercase
+		letter-spacing 0.1em
+	.main-nav 
+		position relative
+		top 50px
+		right 50px
+		float right
+		color white
+		ul 
+			list-style none
+			font-size 0.8em
+			li 
+				display inline
+				padding 10px 20px
+				text-transform uppercase
+				letter-spacing 0.2em
+				transition all 200ms ease-out
+				cursor pointer
+				&:last-of-type 
+					margin-left 20px
+			.callout-link
+				border 1px solid white
+				&:hover 
+					background white
+					color dark-blue
+					transition all 150ms ease-out
+		
+.menu-icon
+	position absolute
+	z-index 3
+	top 40px
+	left 30px
+	width 30px
+	height 30px
+	overflow hidden
+	cursor pointer
+	// border 2px solid darken(dark-blue, 30%)
+	.icon-container
+		width 90%
+		position absolute
+		top 50%
+		left 50%
+		transform translate(-50%, -50%)
+	.bar 
+		display block
+		margin 0 auto
+		width 100%
+		height 2px
+		margin 5px 0
+		background white
+		
+.landing-menu 
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
+	background darken(dark-blue, 50%)
+	color white
+	overflow hidden
+	h1 
+		position relative 
+		top 50%
+		left 20px
