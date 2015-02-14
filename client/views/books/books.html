@@ -5,10 +5,15 @@
 
 			<div class="book-container">
 				<div class="book">
-				<img class="book-image" src="{{volumeInfo.imageLinks.smallThumbnail}}"/>
+					<div class="book-image">
+						<img src="{{volumeInfo.imageLinks.smallThumbnail}}"/>
+					</div>
 					<div class="book-title">
 						{{volumeInfo.title}}
 					</div>
+					<span class="author">
+						{{volumeInfo.authors}}
+					</span>
 				</div>
 			</div>
 

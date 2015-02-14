@@ -45,8 +45,11 @@ Template.landing.events({
 				Session.set('searchResults', result.data.items)
 				_.each(result.data.items, function(item) {
 					// console.log(item.volumeInfo.title)
-					console.log(item.volumeInfo.imageLinks.thumbnail)
+					// console.log(item.volumeInfo.imageLinks.thumbnail)
 				});
+				if(Session.get('searchResults')) {
+					TweenMax.to($('.landing'), 0.2, {height: '80%', ease: Back.easeOut, autoRound: false});
+				}
 			}
 		});
 	}
