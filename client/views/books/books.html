@@ -1,22 +1,32 @@
 <template name="books">
 	{{#if books}}
-	<!-- 	<h1>Search Info</h1> -->
-		{{#each books}}
+		<section class="books">
+		<!-- 	<h1>Search Info</h1> -->
+			{{#each books}}
 
-			<div class="book-container">
-				<div class="book">
-					<div class="book-image">
-						<img src="{{volumeInfo.imageLinks.smallThumbnail}}"/>
+				<div class="book-container">
+					<div class="book" data-isbn="{{volumeInfo.industryIdentifiers.[0].identifier}}">
+						<div class="book-image">
+							<img src="{{volumeInfo.imageLinks.thumbnail}}"/>
+						</div>
+						<div class="book-title">
+							{{volumeInfo.title}}
+						</div>
+						<span class="author">
+							{{volumeInfo.authors}}
+						</span>
+						<div>
+						{{#if saleInfo.listPrice}}
+							Price new: ${{saleInfo.listPrice.amount}}
+						{{/if}}
+						</div>
+						<div>
+							{{saleInfo.isEbook}}
+						</div>
 					</div>
-					<div class="book-title">
-						{{volumeInfo.title}}
-					</div>
-					<span class="author">
-						{{volumeInfo.authors}}
-					</span>
 				</div>
-			</div>
 
-		{{/each}}
+			{{/each}}
+		</section>
 	{{/if}}
 </template>
