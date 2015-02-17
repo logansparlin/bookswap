@@ -6,9 +6,10 @@ Template.singleBook.helpers({
 
 Template.singleBook.rendered = function() {
 	$('.single-book-image').css({'opacity':'0'});
+	$('.single-book-background-image').css({'opacity':'0'})
 	$('.single-book').imagesLoaded(function() {
-		TweenMax.fromTo($('.single-book-image'), 0.6, {opacity: 0, top: '52%'}, {opacity: 1, top: '50%', autoRound: false});
-		TweenMax.fromTo($('.single-book-background-image'), 0.6, {opacity: 0}, {opacity:1, autoRound: false})
+		TweenMax.fromTo($('.single-book-background-image'), 0.6, {opacity: 0}, {opacity:1, autoRound: false, force3D: true});
+		TweenMax.fromTo($('.single-book-image'), 0.6, {opacity: 0, top: '52%'}, {opacity: 1, top: '50%', autoRound: false, force3D: true});
 	})
 }
 
