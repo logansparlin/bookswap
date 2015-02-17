@@ -7,4 +7,5 @@ jnoble:multi-styl
 infinitedg:gsap
 accounts-base
 accounts-password
-
+coffeescript
+mrt:jquery-imagesloaded

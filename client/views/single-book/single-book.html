@@ -1,8 +1,22 @@
 <template name="singleBook">
-	<h1>Books</h1>
-	{{#each books}}
-		<div class="title">
-			{{volumeInfo.title}}
+	<svg:filter id="f1">
+	  <svg:feGaussianBlur stdDeviation="15"/>
+	</svg:filter>
+	{{#with books}}
+	<section class="single-book">
+		<div class="single-book-container">
+			<div class="single-book-background-image" style="background-image: url('{{img}}')"></div>
+			<div class="single-book-overlay"></div>
+			<img class="single-book-image" src="{{img}}" alt="{{title}} thumbnail">
 		</div>
-	{{/each}}
+		<div class="wrapper">
+			<div class="title">
+				<h1>{{title}}</h1>
+			</div>
+			<div class="author">
+				{{author}}
+			</div>
+		</div>
+	</section>
+	{{/with}}
 </template>
