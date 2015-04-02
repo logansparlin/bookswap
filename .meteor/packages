@@ -9,3 +9,4 @@ accounts-base
 accounts-password
 coffeescript
 mrt:jquery-imagesloaded
+aldeed:simple-schema

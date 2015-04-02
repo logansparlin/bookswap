@@ -1,5 +1,5 @@
 <template name="landing">
-
+	{{> accounts}}
 	<div class="menu-icon menu--closed">
 		<div class="icon-container">
 			<span class="bar"></span>
@@ -17,9 +17,13 @@
 		<section class="landing">
 			<nav class="main-nav">
 				<ul>
-					<li>Sign in</li>
-					<li>Sign up</li>
-					<li class="callout-link">+ Sell</li>
+					{{#if currentUser}} 
+						<li class="user-name">Name</li>
+					{{else}}
+						<li class="login-link">Login</li>
+						<li class="register-link">Register</li>
+					{{/if}}
+						<li class="callout-link">+ Sell</li>
 				</ul>
 			</nav>
 			<div class="landing-container">

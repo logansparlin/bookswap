@@ -1,4 +1,10 @@
 Template.landing.events({
+	'click .login-link': function() {
+		$('body').addClass('login--active')
+	},
+	'click .register-link': function() {
+		$('body').addClass('register--active')
+	},
 	'click .menu--closed': function() {
 		var landing = $('.content-wrapper'),
 			top = $('.menu-icon .bar:first-of-type'),
@@ -38,7 +44,7 @@ Template.landing.events({
 		var q = $('.home-search').val();
 		Meteor.http.get("https://www.googleapis.com/books/v1/volumes?q=" + q + "&orderBy=relevance&projection=full&printType=books&maxResults=20&key=AIzaSyApUSiddfk5SFAzatjDy6I8BUNBUm7Ue68", function(error, result) {
 			if(error) {
-				console.log('failed')
+				Session.set('searchResults')
 			} else {
 				var books = result.data;
 				Session.set('searchResults', result.data.items)
@@ -52,13 +58,6 @@ Template.landing.events({
 		});
 	}
 });
-
-// Template.landing.helpers({
-// 	books : function() {
-// 		var books = Session.get('searchResults');
-// 		return books;
-// 	}
-// })
 
 Template.landing.rendered = function() {
 	var lc = $('.landing-container'),
