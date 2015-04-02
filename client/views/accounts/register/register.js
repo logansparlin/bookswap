@@ -15,11 +15,15 @@ Template.register.events({
 		var email = $('#register-email').val();
 		var password = $('#register-password').val();
 		Accounts.createUser({
-			firstName: firstName,
-			lastName: lastName,
+			username: firstName + ' ' + lastName,
 			email: email,
-			password: password
-		})
-		console.log('user created')
+			password: password,
+			profile: {
+				firstName: firstName,
+				lastName: lastName
+			}
+		});
+		$('body').removeClass('register--active')
+		$('body').removeClass('login--active')
 	}
 })

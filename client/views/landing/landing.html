@@ -18,7 +18,7 @@
 			<nav class="main-nav">
 				<ul>
 					{{#if currentUser}} 
-						<li class="user-name">Name</li>
+						<li class="user-name">Hey, {{currentUser.profile.firstName}}</li>
 					{{else}}
 						<li class="login-link">Login</li>
 						<li class="register-link">Register</li>

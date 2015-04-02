@@ -59,6 +59,12 @@ Template.landing.events({
 	}
 });
 
+Template.landing.helpers({
+	name: function() {
+		console.log(Meteor.user())
+	}
+})
+
 Template.landing.rendered = function() {
 	var lc = $('.landing-container'),
 		tag = $('p.tag'),
