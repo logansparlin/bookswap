@@ -1,0 +1,18 @@
+<template name="register">
+	<div class="register overlay-page">
+		<div class="close-icon">
+			<div class="bar"></div>
+			<div class="bar"></div>
+		</div>
+		<div class="accounts-container">
+			<h1>Register</h1>
+			<form class="register-form accounts-form" accept-charset="utf-8">
+				<input class="input-half" type="text" id="register-firstName" placeholder="First" required>
+				<input class="input-half" type="text" id="register-lastName" placeholder="Last" required>
+				<input type="email" id="register-email" placeholder="{{emailLabel}}" required>
+				<input type="password" id="register-password" placeholder="{{passwordLabel}}" required>
+				<input type="submit" value="Register">
+			</form>
+		</div>
+	</div>
+</template>

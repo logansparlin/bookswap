@@ -1,0 +1,29 @@
+<template name="books">
+	{{#if books}}
+		<section class="books">
+		<!-- 	<h1>Search Info</h1> -->
+			{{#each books}}
+
+				<div class="book-container">
+					<div class="book" data-title="{{volumeInfo.title}}">
+						<div class="book-image">
+							<img src="{{volumeInfo.imageLinks.thumbnail}}"/>
+						</div>
+						<div class="book-title">
+							{{volumeInfo.title}}
+						</div>
+						<span class="author">
+							{{volumeInfo.authors}}
+						</span>
+						<div class="old-price">
+						{{#if saleInfo.listPrice}}
+							Price new: ${{saleInfo.listPrice.amount}}
+						{{/if}}
+						</div>
+					</div>
+				</div>
+
+			{{/each}}
+		</section>
+	{{/if}}
+</template>

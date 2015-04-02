@@ -4,6 +4,9 @@ fastclick
 http
 underscore
 jnoble:multi-styl
+infinitedg:gsap
 accounts-base
 accounts-password
-
+coffeescript
+mrt:jquery-imagesloaded
+aldeed:simple-schema

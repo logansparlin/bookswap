@@ -1,0 +1,45 @@
+<template name="landing">
+	{{> accounts}}
+	<div class="menu-icon menu--closed">
+		<div class="icon-container">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</div>
+	</div>
+
+	<div class="landing-menu">
+		<h1>Menu</h1>
+	</div>
+
+
+	<div class="content-wrapper">
+		<section class="landing">
+			<nav class="main-nav">
+				<ul>
+					{{#if currentUser}} 
+						<li class="user-name">Hey, {{currentUser.profile.firstName}}</li>
+					{{else}}
+						<li class="login-link">Login</li>
+						<li class="register-link">Register</li>
+					{{/if}}
+						<li class="callout-link">+ Sell</li>
+				</ul>
+			</nav>
+			<div class="landing-container">
+				<h1 class="main-title">bookswap</h1>
+				<p class="tag">Buy and sell <span class="used">used</span> university textbooks</p>
+				<input type="text" name="search" class="home-search" placeholder="search books">
+			</div>
+		</section>
+		<section class="search-info">
+			{{> books}}
+		</section>
+	</div>
+</template>
+
+<template name="book">
+	<div class="book-wrapper">
+		<span class="title">{{title}}</span>
+	</div>
+</template>

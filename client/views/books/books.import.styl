@@ -1,0 +1,50 @@
+.books 
+	margin 10px
+.book-container 
+	width calc(100% / 4)
+	float left 
+	box-sizing border-box 
+	margin-bottom 10px
+	position relative
+	transition all 250ms ease-out
+	+tablet() 
+		width calc(100% / 3)
+		+portrait() 
+			width 50%
+	+mobile() 
+		width 100%
+	+above(1280px)
+		width calc(100% / 5)
+.book 
+	margin 10px 10px 0 10px
+	box-sizing border-box
+	background #eee
+	height 400px
+	padding 20px
+	overflow hidden
+
+.book-image 
+	text-align center
+	img 
+		width 80%
+		max-width 130px
+	
+.search-info
+	// height 5000px
+	background white
+	overflow auto
+	h1 
+		color dark-blue 
+		text-align center 
+		padding-top 1em 
+		letter-spacing 0.2em
+	.book-title 
+		width 100%
+		padding 10px 0
+		font-size 1.1em
+		text-wrap none
+		text-overflow ellipsis
+	.author 
+		text-align left!important
+		color dark-blue
+		padding 10px 0
