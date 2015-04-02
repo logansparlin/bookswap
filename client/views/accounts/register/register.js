@@ -4,20 +4,40 @@ Template.register.helpers({
 	},
 	passwordLabel: function() {
 		return Schema.register.label('password')
+	},
+	hasError: function(ident) {
+		if(Session.get('accountErrors')) {
+			return !!Session.get('accountErrors')[ident] ? Session.get('accountErrors')[ident] : '';
+		} else {
+			return ''
+		}
 	}
 })
 
 Template.register.events({
 	'submit form': function(e, template) {
 		e.preventDefault()
+
+		var lastName = $('#register-lastName').val(),
+			firstName = $('#register-firstName').val()
+
+		// If name is blank, set to undefined
+		if(lastName === "") {
+			lastName = undefined
+		}
+		if(firstName === "") {
+			firstName = undefined
+		}
+
 		var data = {
-			lastName : $('#register-lastName').val(),
-			firstName : $('#register-firstName').val(),
+			lastName : lastName,
+			firstName : firstName,
 			email : $('#register-email').val(),
 			password : $('#register-password').val()
 		}
 		var context = Schema.register.newContext();
 		var isValid = context.validate(data);
+		var errors = {};
 		if(isValid) {
 			Accounts.createUser({
 				email: data.email,
@@ -28,10 +48,15 @@ Template.register.events({
 					username: data.firstName + " " + data.lastName
 				}
 			});
+			$('body').removeClass('register--active')
+			$('body').removeClass('login--active')
 		} else {
-			console.log("error:")
+			_.each(context.invalidKeys(), function(item) {
+				if(item && item.name) {
+					errors[item.name] = context.keyErrorMessage(item.name);
+				}
+			})
 		}
-		$('body').removeClass('register--active')
-		$('body').removeClass('login--active')
+		Session.set('accountErrors', errors)
 	}
 })
