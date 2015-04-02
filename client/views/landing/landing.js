@@ -5,6 +5,11 @@ Template.landing.events({
 	'click .register-link': function() {
 		$('body').addClass('register--active')
 	},
+	'click .logout':function(e) {
+		e.preventDefault()
+		Meteor.logout()
+		$('.menu--open').click()
+	},
 	'click .menu--closed': function() {
 		var landing = $('.content-wrapper'),
 			top = $('.menu-icon .bar:first-of-type'),

@@ -10,19 +10,27 @@ Template.register.helpers({
 Template.register.events({
 	'submit form': function(e, template) {
 		e.preventDefault()
-		var lastName = $('#register-lastName').val();
-		var firstName = $('#register-firstName').val();
-		var email = $('#register-email').val();
-		var password = $('#register-password').val();
-		Accounts.createUser({
-			username: firstName + ' ' + lastName,
-			email: email,
-			password: password,
-			profile: {
-				firstName: firstName,
-				lastName: lastName
-			}
-		});
+		var data = {
+			lastName : $('#register-lastName').val(),
+			firstName : $('#register-firstName').val(),
+			email : $('#register-email').val(),
+			password : $('#register-password').val()
+		}
+		var context = Schema.register.newContext();
+		var isValid = context.validate(data);
+		if(isValid) {
+			Accounts.createUser({
+				email: data.email,
+				password: data.password,
+				profile: {
+					firstName: data.firstName,
+					lastName: data.lastName,
+					username: data.firstName + " " + data.lastName
+				}
+			});
+		} else {
+			console.log("error:")
+		}
 		$('body').removeClass('register--active')
 		$('body').removeClass('login--active')
 	}
