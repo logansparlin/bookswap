@@ -1,9 +1,11 @@
 Template.landing.events({
-	'click .login-link': function() {
+	'click .login-link, click .login-offcanvas-link': function() {
 		$('body').addClass('login--active')
+		$('.menu--open').click()
 	},
-	'click .register-link': function() {
+	'click .register-link, click .register-offcanvas-link': function() {
 		$('body').addClass('register--active')
+		$('.menu--open').click()
 	},
 	'click .logout':function(e) {
 		e.preventDefault()

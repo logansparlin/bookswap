@@ -33,7 +33,7 @@
 		color white
 		letter-spacing 0.18em
 		text-transform uppercase
-		font-size 0.8em
+		font-size 0.65em
 		padding-top 10px
 		.used 
 			position relative
@@ -57,6 +57,8 @@
 		right 50px
 		float right
 		color white
+		+below($mobile)
+			right 30px
 		ul 
 			list-style none
 			font-size 0.8em
@@ -69,6 +71,9 @@
 				cursor pointer
 				&:last-of-type 
 					margin-left 20px
+				&.login-link, &.register-link
+					+below($mobile)
+						display none
 			.callout-link
 				border 1px solid white
 				&:hover 
@@ -109,8 +114,33 @@
 	background darken(dark-blue, 50%)
 	color white
 	overflow hidden
-	h1 
+	ul
+		list-style none
+		color white
+		text-transform uppercase
 		position relative 
 		top 50%
 		left 20px
-		cursor pointer
+		transform translateY(-50%)
+		letter-spacing 0.1em
+		li 
+			color white 
+			font-weight bold
+			padding 0 5px
+			margin 10px 0
+			cursor pointer
+			box-sizing border-box
+			transition all 100ms ease-out
+			border-left 2px solid transparent
+			&:hover 
+				border-left 2px solid white
+				transition all 100ms ease-out
+			+above($mobile)
+				&.register-offcanvas-link, &.login-offcanvas-link
+					display none
+				
+
+
+
+
+

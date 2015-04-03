@@ -9,8 +9,17 @@
 	</div>
 
 	<div class="landing-menu">
-		<h1>Menu</h1>
-		<h1 class="logout">Logout</h1 >
+		<ul>
+			<li>Home</li>
+			<li>Search</li>
+			<li>About</li>
+			{{#if currentUser}}
+				<li class="logout">Logout</li>
+			{{else}}
+				<li class="register-offcanvas-link">Register</li>
+				<li class="login-offcanvas-link">Login</li>
+			{{/if}}
+		</ul>
 	</div>
 
 
