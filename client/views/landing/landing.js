@@ -12,6 +12,9 @@ Template.landing.events({
 		Meteor.logout()
 		$('.menu--open').click()
 	},
+	'click .sell-link': function(e) {
+		Router.go('/sell')
+	},
 	'click .menu--closed': function() {
 		var landing = $('.content-wrapper'),
 			top = $('.menu-icon .bar:first-of-type'),
