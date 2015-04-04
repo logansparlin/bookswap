@@ -5,6 +5,8 @@ Template.singleBook.helpers({
 });
 
 Template.singleBook.rendered = function() {
+	$(window).scrollTop(0);
+	$('.single-book-container').scrollTop(0);
 	$('.single-book-image').css({'opacity':'0'});
 	$('.single-book-background-image').css({'opacity':'0'})
 	$('.single-book').imagesLoaded(function() {

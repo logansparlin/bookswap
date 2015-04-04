@@ -1,0 +1,23 @@
+<template name="landingHeader">
+	<div class="menu-icon menu--closed">
+		<div class="icon-container">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</div>
+	</div>
+
+	<div class="landing-menu">
+		<ul>
+			<li>Home</li>
+			<li>Search</li>
+			<li>About</li>
+			{{#if currentUser}}
+				<li class="logout">Logout</li>
+			{{else}}
+				<li class="register-offcanvas-link">Register</li>
+				<li class="login-offcanvas-link">Login</li>
+			{{/if}}
+		</ul>
+	</div>
+</template>

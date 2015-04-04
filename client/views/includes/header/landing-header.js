@@ -1,4 +1,4 @@
-Template.layout.events({
+Template.landingHeader.events({
 	'click .login-link, click .login-offcanvas-link': function() {
 		$('body').addClass('login--active')
 		$('.menu--open').click()

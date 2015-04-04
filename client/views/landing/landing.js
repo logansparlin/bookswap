@@ -7,40 +7,6 @@ Template.landing.events({
 		$('body').addClass('register--active')
 		$('.menu--open').click()
 	},
-	'click .logout':function(e) {
-		e.preventDefault()
-		Meteor.logout()
-		$('.menu--open').click()
-	},
-	'click .sell-link': function(e) {
-		Router.go('/sell')
-	},
-	'click .menu--closed': function() {
-		var landing = $('.content-wrapper'),
-			top = $('.menu-icon .bar:first-of-type'),
-			middle = $('.menu-icon .bar:nth-child(2)'),
-			bottom = $('.menu-icon .bar:last-of-type');
-
-		TweenMax.to(landing, 0.25, {x: 300, autoRound: false, ease: Back.easeOut});
-		TweenMax.to(middle, 0.25, {x:-50, autoRound: false, ease: Back.easeOut});
-		TweenMax.to(top, 0.25, {rotation: 45, y: 6, autoRound: false, ease: Back.easeOut});
-		TweenMax.to(bottom, 0.25, {rotation: -45, y: -7, autoRound: false, ease: Back.easeOut});
-
-		$('.menu-icon').removeClass('menu--closed').addClass('menu--open');
-	},
-	'click .menu--open': function() {
-		var landing = $('.content-wrapper'),
-			top = $('.menu-icon .bar:first-of-type'),
-			middle = $('.menu-icon .bar:nth-child(2)')
-			bottom = $('.menu-icon .bar:last-of-type');
-
-		TweenMax.to(landing, 0.2, {x: 0, autoRound: false, ease: Expo.easeOut});
-		TweenMax.to(middle, 0.25, {x:0, autoRound: false, ease: Back.easeOut});
-		TweenMax.to(top, 0.25, {rotation: 0, y: 0, autoRound: false, ease: Back.easeOut});
-		TweenMax.to(bottom, 0.25, {rotation: 0, y: 0, autoRound: false, ease: Back.easeOut});
-
-		$('.menu-icon').removeClass('menu--open').addClass('menu--closed');
-	},
 	'focus .home-search': function() {
 		var landing = $('.landing');
 		$('body').addClass('search--active');
@@ -52,7 +18,7 @@ Template.landing.events({
 		event.preventDefault();
 		var text = event.target.value;
 		var q = $('.home-search').val();
-		Meteor.http.get("https://www.googleapis.com/books/v1/volumes?q=" + q + "&orderBy=relevance&projection=full&printType=books&maxResults=20&key=AIzaSyApUSiddfk5SFAzatjDy6I8BUNBUm7Ue68", function(error, result) {
+		Meteor.http.get("https://www.googleapis.com/books/v1/volumes?q=" + q + "&orderBy=relevance&printType=books&maxResults=20&key=AIzaSyApUSiddfk5SFAzatjDy6I8BUNBUm7Ue68", function(error, result) {
 			if(error) {
 				Session.set('searchResults')
 			} else {
@@ -61,9 +27,9 @@ Template.landing.events({
 				_.each(result.data.items, function(item) {
 					// console.log(item.volumeInfo.title)
 				});
-				if(Session.get('searchResults')) {
-					TweenMax.to($('.landing'), 0.2, {height: '80%', ease: Back.easeOut, autoRound: false});
-				}
+				// if(Session.get('searchResults')) {
+				// 	TweenMax.to($('.landing'), 0.2, {height: '80%', ease: Back.easeOut, autoRound: false});
+				// }
 			}
 		});
 	}
