@@ -7,8 +7,11 @@
 		<div class="accounts-container">
 			<h1>Sign In</h1>
 			<form class="login-form accounts-form" accept-charset="utf-8">
-				<input type="email" id="login-email" placeholder="{{emailLabel}}" required autocomplete="on">
-				<input type="password" id="login-password" placeholder="{{passwordLabel}}" required autocomplete="on" autocorrect="off">
+				<div class="input-container">
+					<input type="email" id="login-email" placeholder="{{emailLabel}}" autocomplete="on" autocorrect="off">
+					<input type="password" id="login-password" placeholder="{{passwordLabel}}" autocomplete="on" autocorrect="off">
+					<span class="help-block">{{loginError}}</span>
+				</div>
 				<input type="submit" value="Log In">
 			</form>
 		</div>

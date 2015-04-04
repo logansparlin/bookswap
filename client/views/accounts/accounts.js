@@ -4,6 +4,7 @@ Template.accounts.events({
 		$('body').removeClass('register--active')
 		$('.accounts-form input').not('[type="submit"]').val('');
 		Session.set('accountErrors')
+		Session.set('loginError')
 		Router.go('/')
 	}
 })

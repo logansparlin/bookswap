@@ -2,10 +2,16 @@ Template.layout.events({
 	'click .login-link, click .login-offcanvas-link': function() {
 		$('body').addClass('login--active')
 		$('.menu--open').click()
+		$('.accounts-form input').not('[type="submit"]').val('');
+		Session.set('accountErrors')
+		Session.set('loginError')
 	},
 	'click .register-link, click .register-offcanvas-link': function() {
 		$('body').addClass('register--active')
 		$('.menu--open').click()
+		$('.accounts-form input').not('[type="submit"]').val('');
+		Session.set('accountErrors')
+		Session.set('loginError')
 	},
 	'click .logout':function(e) {
 		e.preventDefault()

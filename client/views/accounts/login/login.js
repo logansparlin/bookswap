@@ -4,6 +4,9 @@ Template.login.helpers({
 	},
 	passwordLabel: function() {
 		return Schema.login.label('password')
+	},
+	loginError: function() {
+		return Session.get('loginError');
 	}
 })
 
@@ -15,12 +18,11 @@ Template.login.events({
 		var password = $('#login-password').val();
 		Meteor.loginWithPassword(email, password, function(err) {
 			if(err) {
-				console.log(err)
+				console.log(err.reason)
+				Session.set('loginError', err.reason)
 			} else {
-
+				$('body').removeClass('login--active register--active')
 			}
-			return false;
 		})
-		$('body').removeClass('login--active register--active')
 	}
 })
