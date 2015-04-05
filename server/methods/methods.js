@@ -13,3 +13,9 @@
 // 		}
 // 	}
 // })
+
+Meteor.methods({
+	addBook: function(book) {
+		Books.insert(book)
+	}
+})

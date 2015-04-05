@@ -1,9 +1,6 @@
 Template.register.helpers({
-	emailLabel: function() {
-		return Schema.register.label('email')
-	},
-	passwordLabel: function() {
-		return Schema.register.label('password')
+	label: function(label) {
+		return Schema.register.label(label)
 	},
 	hasError: function(ident) {
 		if(Session.get('accountErrors')) {

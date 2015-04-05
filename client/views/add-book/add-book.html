@@ -1,0 +1,32 @@
+<template name="addBook">
+	<div class="wrapper">
+		<h1>Sell Book</h1>
+		<form id="new-book-form">
+			<div class="input-container half">
+				<input class="input-half" type="text" id="new-book-title" placeholder="{{label 'title'}}" autocomplete="on" autocorrect="off">
+				<!-- <span class="help-block">{{hasError 'firstName'}}</span> -->
+			</div>
+			<div class="input-container half">
+				<input class="input-half" type="text" id="new-book-author" placeholder="{{label 'author'}}" autocomplete="on" autocorrect="off">
+				<!-- <span class="help-block">{{hasError 'lastName'}}</span> -->
+			</div>
+			<div class="input-container half">
+				<input class="input-half" type="text" id="new-book-condition" placeholder="{{label 'condition'}}" autocomplete="on" autocorrect="off">
+				<!-- <span class="help-block">{{hasError 'firstName'}}</span> -->
+			</div>
+			<div class="input-container half">
+				<input class="input-half" type="text" id="new-book-course" placeholder="{{label 'course'}}" autocomplete="on" autocorrect="off">
+				<!-- <span class="help-block">{{hasError 'lastName'}}</span> -->
+			</div>
+			<div class="input-container half">
+				<input class="input-half" type="number" id="new-book-newPrice" placeholder="{{label 'newPrice'}}" autocomplete="on" autocorrect="off">
+				<!-- <span class="help-block">{{hasError 'firstName'}}</span> -->
+			</div>
+			<div class="input-container half">
+				<input class="input-half" type="number" id="new-book-price" placeholder="{{label 'price'}}" autocomplete="on" autocorrect="off">
+				<!-- <span class="help-block">{{hasError 'lastName'}}</span> -->
+			</div>
+			<input type="submit" value="Sell Book">
+		</form>
+	</div>
+</template>

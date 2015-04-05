@@ -40,8 +40,13 @@
 .register--active 
 	.register.overlay-page 
 		visibility visible
+		
+
+
+// FORMS STYLES
 
 // Accounts Form
+
 
 .accounts-form 
 	width 100%
@@ -51,6 +56,7 @@
 	letter-spacing 0.1em
 	text-align center
 	-webkit-appearance none
+form
 	.input-container
 		width 100%
 		position relative
@@ -83,11 +89,16 @@
 		color white
 		background light-blue
 		border-radius 20px
+		transition background 100ms ease-out
+		&:hover, &:active 
+			background dark-blue
+			transition background 100ms ease-out
+			
 	.input-container.half
 		width 47%
-		&:first-of-type
+		&:nth-child(odd)
 			float left
-		&:nth-of-type(2)
+		&:nth-child(even)
 			float right	
 		
 .help-block

@@ -8,19 +8,19 @@
 			<h1>Register</h1>
 			<form class="register-form accounts-form" accept-charset="utf-8">
 				<div class="input-container half">
-					<input class="input-half" type="text" id="register-firstName" placeholder="First" autocomplete="on" autocorrect="off">
+					<input class="input-half" type="text" id="register-firstName" placeholder="{{label 'firstName'}}" autocomplete="on" autocorrect="off">
 					<span class="help-block">{{hasError 'firstName'}}</span>
 				</div>
 				<div class="input-container half">
-					<input class="input-half" type="text" id="register-lastName" placeholder="Last" autocomplete="on" autocorrect="off">
+					<input class="input-half" type="text" id="register-lastName" placeholder="{{label 'lastName'}}" autocomplete="on" autocorrect="off">
 					<span class="help-block">{{hasError 'lastName'}}</span>
 				</div>
 				<div class="input-container clearfix">
-					<input type="email" id="register-email" placeholder="{{emailLabel}}" autocomplete="on" autocorrect="off">
+					<input type="email" id="register-email" placeholder="{{label 'email'}}" autocomplete="on" autocorrect="off">
 					<span class="help-block">{{hasError 'email'}}</span>
 				</div>
 				<div class="input-container">
-					<input type="password" id="register-password" placeholder="{{passwordLabel}}" autocomplete="on" autocorrect="off">
+					<input type="password" id="register-password" placeholder="{{label 'password'}}" autocomplete="on" autocorrect="off">
 					<span class="help-block">{{hasError 'password'}}</span>
 				</div>
 				<input type="submit" value="Register">
