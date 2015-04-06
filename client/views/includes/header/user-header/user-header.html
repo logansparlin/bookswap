@@ -1,11 +1,14 @@
 <template name="userHeader">
 	<header id="user-header">
 		<div class="user-header-container wrapper">
-			<h1>User Header</h1>
+			<h1 class="logo">Bookswap</h1>
 			<nav class="user-nav">
 				<div class="user-name link">{{currentUser.profile.firstName}}</div>
 				<div class="settings-link link"><i class="fa fa-cog"></i></div>
 			</nav>
+			<ul class="user-settings-tab">
+				<li class="user-logout">Logout</li>
+			</ul>
 		</div>
 	</header>
 </template>
