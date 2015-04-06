@@ -16,6 +16,13 @@
 
 Meteor.methods({
 	addBook: function(book) {
-		Books.insert(book)
+		var context = Schema.addBook.newContext(),
+			isValid = context.validate(book);
+
+		if(isValid) {
+			Books.insert(book)
+		} else {
+			console.log('error')
+		}
 	}
 })

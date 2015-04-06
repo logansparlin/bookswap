@@ -1,6 +1,9 @@
 Template.addBook.helpers({
 	label: function(label) {
 		return Schema.addBook.label(label)
+	},
+	currentBook: function() {
+		return Session.get('currentBookListing')
 	}
 });
 
@@ -16,17 +19,23 @@ Template.addBook.events({
 			condition: $(nb + 'condition').val(),
 			course: $(nb + 'course').val(),
 			newPrice: parseInt($(nb + 'newPrice').val()),
-			price: parseInt($(nb + 'price').val())
+			price: parseInt($(nb + 'price').val()),
+			createdBy: Meteor.userId()
 		};
 
 		var context = Schema.addBook.newContext(),
-			isValid = context.validate(book);
+			isValid = context.validate(book),
+			errors = {};
 
 		if(isValid) {
-			console.log(book)
 			Meteor.call('addBook', book)
 		} else {
-			console.log('error')
+			_.each(context.invalidKeys(), function(item) {
+				if(item && item.name) {
+					errors[item.name] = context.keyErrorMessage(item.name);
+				}
+				console.log(errors)
+			})
 		}
 
 	}

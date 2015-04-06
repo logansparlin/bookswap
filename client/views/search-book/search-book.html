@@ -1,0 +1,22 @@
+<template name="searchBook">
+	<div class="wrapper">
+		<span>Search Book Template</span>
+		<input class="book-search" placeholder="Search Books">
+	</div>
+	{{#if books}}
+		<section class="add-book-search-results">
+			{{#each books}}
+				<div class="results-book-container" data-tag="{{etag}}">
+					<div class="results-book" data-isbn="{{isbn}}">
+						<div class="results-book-image">
+							<img src="{{volumeInfo.imageLinks.thumbnail}}"/>
+						</div>
+						<!-- <div class="results-book-title">
+							{{volumeInfo.title}}
+						</div> -->
+					</div>
+				</div>
+			{{/each}}
+		</section>
+	{{/if}}
+</template>

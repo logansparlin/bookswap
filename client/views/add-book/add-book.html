@@ -1,13 +1,14 @@
 <template name="addBook">
+	{{> searchBook}}
 	<div class="wrapper">
 		<h1>Sell Book</h1>
 		<form id="new-book-form">
 			<div class="input-container half">
-				<input class="input-half" type="text" id="new-book-title" placeholder="{{label 'title'}}" autocomplete="on" autocorrect="off">
+				<input class="input-half" type="text" id="new-book-title" placeholder="{{label 'title'}}" autocomplete="on" autocorrect="off" value="{{currentBook.volumeInfo.title}}">
 				<!-- <span class="help-block">{{hasError 'firstName'}}</span> -->
 			</div>
 			<div class="input-container half">
-				<input class="input-half" type="text" id="new-book-author" placeholder="{{label 'author'}}" autocomplete="on" autocorrect="off">
+				<input class="input-half" type="text" id="new-book-author" placeholder="{{label 'author'}}" autocomplete="on" autocorrect="off" value="{{currentBook.volumeInfo.authors.[0]}}">
 				<!-- <span class="help-block">{{hasError 'lastName'}}</span> -->
 			</div>
 			<div class="input-container half">
