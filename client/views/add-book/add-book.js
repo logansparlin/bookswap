@@ -4,6 +4,10 @@ Template.addBook.helpers({
 	},
 	currentBook: function() {
 		return Session.get('currentBookListing')
+	},
+	userListings: function() {
+		var books = Books.find({ createdBy: Meteor.userId()})
+		return books
 	}
 });
 

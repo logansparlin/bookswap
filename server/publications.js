@@ -4,4 +4,4 @@ Meteor.publish('books', function() {
 
 Meteor.publish('users', function() {
 	return Meteor.users.find({}, {fields: {firstName: 1, lastName: 1}})
-})
+});

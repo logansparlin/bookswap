@@ -12,3 +12,5 @@ mrt:jquery-imagesloaded
 aldeed:simple-schema
 aldeed:collection2
 fortawesome:fontawesome
+cfs:standard-packages
+cfs:s3

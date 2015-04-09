@@ -29,5 +29,15 @@
 			</div>
 			<input type="submit" value="Sell Book">
 		</form>
+		<section>
+			<h1>
+				Your Listings
+			</h1>
+			<div>
+				{{#each userListings}}
+					<li>{{title}}</li>
+				{{/each}}
+			</div>
+		</section>
 	</div>
 </template>
