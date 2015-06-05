@@ -7,6 +7,9 @@ Template.landing.events({
 		$('body').addClass('register--active')
 		$('.menu--open').click()
 	},
+	'click .maps-link': function() {
+		Router.go('mapsTest');
+	},
 	'focus .home-search': function() {
 		var landing = $('.landing');
 		$('body').addClass('search--active');

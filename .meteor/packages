@@ -14,3 +14,5 @@ aldeed:collection2
 fortawesome:fontawesome
 cfs:standard-packages
 cfs:s3
+mdg:geolocation
+jaymc:google-reverse-geocode
