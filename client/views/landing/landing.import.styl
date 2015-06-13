@@ -1,11 +1,13 @@
-.content-wrapper 
+.content-wrapper
 	width 100%
 	height 100%
 	position relative
 	z-index 2
 	background white
+	overflow-y scroll
+	-webkit-overflow-scrolling touch
 
-.landing 
+.landing
 	position relative
 	z-index 2
 	width 100%
@@ -20,25 +22,25 @@
 		left 50%
 		transform translate(-50%, -50%)
 		text-align center
-	h1 
+	h1
 		color white
 		text-transform uppercase
 		font-weight 300
 		letter-spacing 0.5em
 		padding-left 20px
 		font-size 2em
-	.tag 
+	.tag
 		color white
 		letter-spacing 0.18em
 		text-transform uppercase
 		font-size 0.65em
 		padding-top 10px
-		.used 
+		.used
 			position relative
 			bottom 5px
 			padding-bottom 3px
 			border-bottom 1px solid white
-	.home-search 
+	.home-search
 		width 90%
 		padding 15px 10px
 		margin 0 auto
@@ -49,7 +51,7 @@
 		color dark-blue
 		text-transform uppercase
 		letter-spacing 0.1em
-	.main-nav 
+	.main-nav
 		position relative
 		top 50px
 		right 50px
@@ -57,30 +59,24 @@
 		color white
 		+below($mobile)
 			right 30px
-		ul 
+		ul
 			list-style none
 			font-size 0.8em
-			li 
+			li
 				display inline
 				padding 10px 20px
 				text-transform uppercase
 				letter-spacing 0.2em
 				transition all 200ms ease-out
 				cursor pointer
-				&:last-of-type 
+				&:last-of-type
 					margin-left 20px
 				&.login-link, &.register-link
 					+below($mobile)
 						display none
 			.callout-link
 				border 1px solid white
-				&:hover 
+				&:hover
 					background white
 					color dark-blue
 					transition all 150ms ease-out
-				
-
-
-
-
-
