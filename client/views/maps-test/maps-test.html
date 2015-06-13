@@ -2,4 +2,11 @@
 	{{geoCode}}
 	<h1>Maps Testing Page</h1>
 	<div class="location">You are here: {{location}}</div>
+	<div>Reference Location: {{refLocation}}</div>
+	<div>Reference Lat &amp; Lon: {{refLatLon}}</div>
+	<input type="range" class="distance-range" min="25" max="1500" step="25" value="25">
+	{{#each nearPlaces}}
+		<h2>{{title}}</h2>
+		<span>- {{author}}</span>
+	{{/each}}
 </template>

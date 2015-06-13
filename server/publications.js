@@ -1,5 +1,7 @@
+Books._ensureIndex({location: "2dsphere"});
+
 Meteor.publish('books', function() {
-	return Books.find();
+	return Books.find({});
 });
 
 Meteor.publish('users', function() {

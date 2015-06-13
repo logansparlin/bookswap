@@ -24,5 +24,11 @@ Meteor.methods({
 		} else {
 			console.log('error')
 		}
+	},
+
+	getLatLon: function(address) {
+		var geo = new GeoCoder();
+		var latLon = geo.geocode(address);
+		return latLon;
 	}
 })

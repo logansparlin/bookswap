@@ -16,3 +16,5 @@ cfs:standard-packages
 cfs:s3
 mdg:geolocation
 jaymc:google-reverse-geocode
+aldeed:geocoder
+reactive-var
